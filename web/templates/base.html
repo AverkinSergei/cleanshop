@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+{% block content %}
+{% endblock content %}
+
+{% if debug %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+{% else %}
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+{% endif %}
+<script src="{% static 'vue-app.js' %}"></script>
+
+</body>
+
+</html>

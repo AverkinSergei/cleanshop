@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% verbatim %}
+    <div id="app">
+        <div v-bind:title="message">
+        Наведи на меня курсор и увидишь title!
+        </div>
+        <p v-on:click="reverseMessage">{{ message1 }}</p>
+        <span v-if="seen">Сейчас меня видно</span>
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+        <div>{{ message2 }}</div>
+        <input v-model="message2" />
+        <ol>
+            <todo-item
+                    v-for="item in groceryList"
+                    v-bind:todo="item"
+                    v-bind:key="item.id"
+            ></todo-item>
+        </ol>
+    </div>
+    {% endverbatim %}
+{% endblock content %}
